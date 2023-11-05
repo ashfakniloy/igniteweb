@@ -54,7 +54,7 @@ function Banner() {
               alt="illustration"
               width={638}
               height={361}
-              quality={100}
+              // quality={100}
               priority
               // className="lg:w-[638px] lg:h-[361px]"
             />

@@ -9,14 +9,17 @@ import { AnimateStaggerTop, StaggerParent } from "@/components/Animations";
 
 const socials = [
   {
+    name: "Facebook",
     link: "https://www.facebook.com",
     icon: <Facebook />,
   },
   {
+    name: "Twitter",
     link: "https://www.twitter.com",
     icon: <Twitter />,
   },
   {
+    name: "Linkedin",
     link: "https://www.linkedin.com",
     icon: <Linkedin />,
   },
@@ -43,7 +46,11 @@ function Team() {
                       <div className="absolute bottom-10 inset-x-0 opacity-0 group-hover:opacity-100 group-hover:delay-300 duration-100 flex justify-center gap-6">
                         {socials.map((social, i) => (
                           <span key={i} className="scale-150 text-white">
-                            <Link href={social.link} target="_blank">
+                            <Link
+                              href={social.link}
+                              target="_blank"
+                              aria-label={social.name}
+                            >
                               {social.icon}
                             </Link>
                           </span>

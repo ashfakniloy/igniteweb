@@ -19,6 +19,7 @@ function OurWork() {
               <Link
                 key={socialLink.name}
                 href={socialLink.link}
+                aria-label={socialLink.name}
                 target="_blank"
               >
                 {socialLink.icon}

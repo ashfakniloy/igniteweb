@@ -5,7 +5,7 @@ function ButtonHamburger({
   showNav: boolean;
   setShowNav: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
-  const hamburgerLine = `h-[3px] w-6 my-[2px] rounded-full bg-gray-800 dark:bg-gray-200 transition ease transform duration-300`;
+  const hamburgerLine = `h-[3px] w-6 my-[2px] rounded-full bg-yellow-300 transition ease transform duration-300`;
 
   return (
     <button

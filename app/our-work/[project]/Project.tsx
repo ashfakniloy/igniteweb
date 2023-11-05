@@ -42,15 +42,15 @@ function Project({ project }: { project: ProjectType | undefined }) {
           <div className="mt-12 flex flex-col lg:flex-row lg:justify-between gap-5 font-medium border-b-2 border-gray-300 pb-8">
             <div>
               <p className="text-gray-600">Cient</p>
-              <h6 className="text-xl lg:text-2xl">{client}</h6>
+              <p className="text-xl lg:text-2xl">{client}</p>
             </div>
             <div>
               <p className="text-gray-600">Service</p>
-              <h6 className="text-xl lg:text-2xl">{service}</h6>
+              <p className="text-xl lg:text-2xl">{service}</p>
             </div>
             <div>
               <p className="text-gray-600">Deliverable</p>
-              <h6 className="text-xl lg:text-2xl">{deliverable}</h6>
+              <p className="text-xl lg:text-2xl">{deliverable}</p>
             </div>
           </div>
 
@@ -66,9 +66,9 @@ function Project({ project }: { project: ProjectType | undefined }) {
           </div>
 
           <div className="mt-[112px] flex flex-col lg:flex-row lg:justify-between items-center gap-8 lg:gap-5 py-[26px] border-y-2 border-gray-300">
-            <h6 className="text-2xl lg:text-[27px] font-medium text-royal-blue">
+            <p className="text-2xl lg:text-[27px] font-medium text-royal-blue">
               Keywords
-            </h6>
+            </p>
             <div className="flex flex-wrap justify-between lg:justify-start items-center gap-x-8 gap-y-5 lg:gap-[60px]">
               {keywords.map((keyword, i) => (
                 <p key={i} className="text-lg font-medium text-gray-600">

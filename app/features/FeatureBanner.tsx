@@ -46,7 +46,7 @@ function FeatureBanner() {
               alt="illustration2"
               width={638}
               height={361}
-              quality={100}
+              // quality={100}
               priority
             />
           </TiltedCard>

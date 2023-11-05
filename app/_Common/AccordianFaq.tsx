@@ -33,9 +33,9 @@ function AccordianFaq() {
               className="flex justify-between items-center cursor-pointer group"
               onClick={() => toggle(i)}
             >
-              <h4 className="flex-1 text-xl lg:text-2xl font-medium">
+              <p className="flex-1 text-xl lg:text-2xl font-medium">
                 {faq.title}
-              </h4>
+              </p>
               <span className="w-8 h-8 flex justify-center items-center rounded-full group-active:bg-indigo-500 lg:group-hover:bg-indigo-500 transition-colors duration-200">
                 {clicked === i ? <X /> : <Plus />}
               </span>

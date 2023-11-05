@@ -56,9 +56,9 @@ function ProjectPage({ params: { project } }: ProjectPageProps) {
   }
 
   return (
-    <div className="pt-[50px]">
+    <>
       <Project project={projectData} />
-    </div>
+    </>
   );
 }
 
