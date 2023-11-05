@@ -36,6 +36,7 @@ export function generateMetadata({
 
   return {
     title: singleProject.name,
+    description: singleProject.description,
     openGraph: {
       images: {
         url: singleProject.imagesrc,
@@ -43,8 +44,9 @@ export function generateMetadata({
         height: 630,
         alt: singleProject.name,
       },
+      title: singleProject.name,
+      description: singleProject.description,
     },
-    description: singleProject.description,
   };
 }
 

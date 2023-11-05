@@ -27,6 +27,11 @@ export const metadata: Metadata = {
       height: 630,
       alt: "igniteweb",
     },
+    title: {
+      default: "Ignite Web",
+      template: `%s | Ignite Web`,
+    },
+    description: "Building stellar websites for early startups",
   },
 };
 

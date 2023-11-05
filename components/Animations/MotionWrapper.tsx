@@ -1,9 +1,8 @@
 "use client";
 
-import { MotionConfig, MotionProps } from "framer-motion";
+import { MotionConfig, MotionConfigProps } from "framer-motion";
 
-const scrollAnimationConfig: MotionProps = {
-  viewport: { once: false, amount: 0.3 },
+const scrollAnimationConfig: MotionConfigProps = {
   transition: { duration: 0.3, ease: "easeOut" },
 };
 
