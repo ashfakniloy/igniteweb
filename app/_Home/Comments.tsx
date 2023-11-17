@@ -21,9 +21,9 @@ function Comments() {
                   //   - shorthand for flex-grow:0; flex-shrink:0; flex-basis:100%
                   //   - we want this slide to not be able to grow or shrink and take up 100% width of the viewport.
                   <div key={i} className="flex-[0_0_100%] mx-5">
-                    <h4 className="text-lg lg:text-[32px] font-medium lg:leading-[48px]">
+                    <p className="text-lg lg:text-[32px] font-medium lg:leading-[48px]">
                       {comment.description}
-                    </h4>
+                    </p>
                     <div className="mt-6 lg:mt-12 flex gap-4">
                       <div className="relative w-[52px] h-[52px] rounded-full overflow-hidden">
                         <Image

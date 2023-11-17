@@ -29,9 +29,9 @@ function Inquiry() {
           </div>
 
           <div className="flex-1 px-5 py-8 lg:p-24">
-            <h6 className="text-[28px] lg:text-[32px] font-medium">
+            <h2 className="text-[28px] lg:text-[32px] font-medium">
               Send inquiry
-            </h6>
+            </h2>
             <p className="mt-4 text-custom-gray">
               {`Have questions or need assistance? Send us your inquiries, and we'll respond with detailed information and support.`}
             </p>

@@ -28,7 +28,7 @@ function Navbar() {
 
       <div
         className={cn(
-          "sticky mt-4 top-0 bg-tint-blue  backdrop-blur-sm z-20 transition-colors duration-300",
+          "sticky mt-4 top-0 bg-tint-blue backdrop-blur-sm z-20 transition-colors duration-300",
           isScrolled2 && "bg-opacity-80",
           showNav && "bg-opacity-100"
         )}

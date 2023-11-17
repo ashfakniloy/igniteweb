@@ -7,7 +7,6 @@ function FAQ() {
   return (
     <Section>
       <AnimateTop>
-        {" "}
         <div className="flex flex-col lg:flex-row lg:justify-between gap-8 lg:gap-[110px]">
           <div className="lg:max-w-[327px] space-y-4">
             <Heading2>Frequently asked questions</Heading2>

@@ -41,9 +41,9 @@ function Work() {
                       alt={work.title}
                       className="w-10 h-10 lg:w-[50px] lg:h-[50px]"
                     />
-                    <h4 className="mt-5 text-2xl lg:text-[32px] font-medium">
+                    <p className="mt-5 text-2xl lg:text-[32px] font-medium">
                       {work.title}
-                    </h4>
+                    </p>
                     <p className="mt-2">{work.description}</p>
                   </>
                 </AnimateStaggerTop>

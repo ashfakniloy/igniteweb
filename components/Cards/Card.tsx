@@ -21,9 +21,9 @@ function Card({
       settings={{ gyroscope: false }}
     >
       <span>{icon}</span>
-      <h4 className="mt-5 lg:mt-[22px] text-[22px] lg:text-2xl font-medium">
+      <p className="mt-5 lg:mt-[22px] text-[22px] lg:text-2xl font-medium">
         {title}
-      </h4>
+      </p>
       <p className="mt-[12px] text-gray-600">{description}</p>
     </TiltedCard>
   );

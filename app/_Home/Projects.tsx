@@ -36,9 +36,9 @@ function Projects() {
                   <div className="absolute bottom-0 text-white px-5 lg:px-12 pb-5 lg:pb-[76px]">
                     <AnimateFade delay={0.3}>
                       <div>
-                        <h4 className="text-[22px] lg:text-2xl leading-7 lg:leading-9 font-medium">
+                        <p className="text-[22px] lg:text-2xl leading-7 lg:leading-9 font-medium">
                           {projects[0].name}
-                        </h4>
+                        </p>
                         <p className="mt-2 lg:mt-4 text-gray-300 line-clamp-2">
                           {projects[0].description}
                         </p>
@@ -73,9 +73,9 @@ function Projects() {
                     <div className="w-full h-full bg-gradient-to-tl from-tint-blue to-tint-blue/[42%]">
                       <div className="absolute bottom-0 px-5 lg:px-12 pb-5 lg:pb-[45px]">
                         <AnimateFade duration={0.1} delay={0.3}>
-                          <h4 className="text-[22px] lg:text-2xl font-medium text-white leading-7 lg:leading-9">
+                          <p className="text-[22px] lg:text-2xl font-medium text-white leading-7 lg:leading-9">
                             {project.name}
-                          </h4>
+                          </p>
                           <ArrowLink
                             href={`/our-work/${project.slug}`}
                             className="mt-[10px] text-custom-yellow"
