@@ -12,7 +12,7 @@ export async function getSingleBlog({
 
   const res = await fetch(`${API_URL}/blogs/${slug}`, {
     cache: "no-store",
-    headers: headers(), // error after deploying to vercel
+    headers: headerList, // error after deploying to vercel
   });
 
   const data = await res.json();

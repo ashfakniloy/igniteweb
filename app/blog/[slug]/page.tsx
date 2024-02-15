@@ -1,12 +1,14 @@
 // import { Metadata } from "next";
-import Image from "next/image";
+// import Image from "next/image";
 import { Section } from "@/components/Wrapper/Section";
-import { getFomrattedDate } from "@/utils/getFomrattedDate";
-import { getSingleBlog } from "@/utils/getSingleBlog";
-import { notFound } from "next/navigation";
-import parser from "html-react-parser";
-import { AnimateTop } from "@/components/Animations";
-import BadgeContentBoard from "@/components/BadgeContentBoard";
+// import { getFomrattedDate } from "@/utils/getFomrattedDate";
+// import { getSingleBlog } from "@/utils/getSingleBlog";
+// import { notFound } from "next/navigation";
+// import parser from "html-react-parser";
+// import { AnimateTop } from "@/components/Animations";
+// import BadgeContentBoard from "@/components/BadgeContentBoard";
+import BlogArticle from "./blog-article";
+import { Suspense } from "react";
 
 type SingleBlogPageProps = {
   params: {
@@ -64,23 +66,26 @@ type SingleBlogPageProps = {
 //   };
 // }
 
-async function SingleBlogPage({ params: { slug } }: SingleBlogPageProps) {
-  const blog = await getSingleBlog({ slug });
+function SingleBlogPage({ params: { slug } }: SingleBlogPageProps) {
+  // const blog = await getSingleBlog({ slug });
 
-  if (!blog) {
-    notFound();
-  }
+  // if (!blog) {
+  //   notFound();
+  // }
 
   return (
     <>
-      <Section>
-        <AnimateTop>
+      <Suspense fallback={null}>
+        <Section>
+          <BlogArticle slug={slug} />
+          {/* <AnimateTop>
           <div className="w-full lg:w-[950px] mx-auto">
             <div className="relative">
               <div className="absolute flex justify-center w-full lg:block lg:w-auto lg:right-0 -top-12">
                 <BadgeContentBoard />
               </div>
             </div>
+
             <article>
               <div className="flex flex-wrap justify-center items-center gap-3">
                 {blog.categories.map((categoty, i) => (
@@ -121,8 +126,9 @@ async function SingleBlogPage({ params: { slug } }: SingleBlogPageProps) {
               <div className="mt-14 ContentBoard">{parser(blog.body)}</div>
             </article>
           </div>
-        </AnimateTop>
-      </Section>
+        </AnimateTop> */}
+        </Section>
+      </Suspense>
     </>
   );
 }
