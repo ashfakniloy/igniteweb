@@ -70,10 +70,10 @@ export default function RootLayout({
         /> */}
 
         {/* for non nextjs websites */}
-        <script
+        {/* <script
           src={`${API_ORIGIN}/api/65c8877f09417cb3d8b7e600/set-device-id`}
           async
-        />
+        /> */}
       </body>
     </html>
   );
