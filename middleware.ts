@@ -4,9 +4,9 @@ import type { NextRequest } from "next/server";
 export default function middleware(request: NextRequest) {
   // Clone the request headers and set a new header `x-hello-from-middleware1`
   const requestHeaders = new Headers(request.headers);
-  // requestHeaders.set("x-hello-from-middleware1", "hello");
+  requestHeaders.set("x-hello-from-middleware1", "hello");
 
-  console.log("requestHeaders", requestHeaders);
+  // console.log("requestHeaders", requestHeaders);
 
   // You can also set request headers in NextResponse.rewrite
   const response = NextResponse.next({
@@ -17,7 +17,7 @@ export default function middleware(request: NextRequest) {
   });
 
   // Set a new response header `x-hello-from-middleware2`
-  // response.headers.set("x-hello-from-middleware2", "hello");
+  response.headers.set("x-hello-from-middleware2", "hello2");
   return response;
 }
 
