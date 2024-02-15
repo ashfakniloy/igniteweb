@@ -13,7 +13,7 @@ export async function getSingleBlog({
   const res = await fetch(`${API_URL}/blogs/${slug}`, {
     cache: "no-store",
     headers: {
-      test: "testing header",
+      ...headerList,
     }, // error after deploying to vercel
   });
 
