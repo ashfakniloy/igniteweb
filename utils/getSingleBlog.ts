@@ -1,12 +1,6 @@
 import { API_URL } from "@/config";
 import { headers } from "next/headers";
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-  "Access-Control-Allow-Headers": "*",
-};
-
 export async function getSingleBlog({
   slug,
 }: {
@@ -24,7 +18,7 @@ export async function getSingleBlog({
 
   const res = await fetch(`${API_URL}/blogs/${slug}`, {
     cache: "no-store",
-    headers: headersInfo, // error after deploying to vercel
+    headers: headersInfo, // error after deploying to vercel if headerList passed directly
   });
 
   const data = await res.json();
