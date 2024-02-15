@@ -9,7 +9,20 @@ function NavMenu({ isScrolled }: { isScrolled: boolean }) {
   const pathname = usePathname();
   const uId = useId();
 
-  const isActive = (link: string) => pathname === link;
+  // const isActive = (path: string) => pathname === path;
+
+  const isActive = (path: string) => {
+    if (path === "/" && pathname === path) {
+      return true;
+    }
+
+    if (
+      path !== "/" &&
+      (pathname === path || pathname.startsWith(`${path}/`))
+    ) {
+      return true;
+    }
+  };
 
   return (
     <ul className="flex items-center gap-8">

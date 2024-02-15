@@ -1,5 +1,9 @@
 import { z } from "zod";
 
+const phoneRegex = new RegExp(
+  /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
+);
+
 export const contactSchema = z.object({
   name: z
     .string()
@@ -7,10 +11,11 @@ export const contactSchema = z.object({
     .min(3, "Name should be atleast 3 characters longer")
     .max(30, "Name shouyld not be longer than 30 characters"),
   email: z.string().min(1, "Email is required").email("Email is not valid"),
-  subject: z
+  phoneNumber: z
     .string()
-    .min(1, "Subject is required")
-    .min(3, "Subject should be atleast 3 characters longer"),
+    .regex(phoneRegex, "Invalid phone number")
+    .or(z.literal("")),
+  subject: z.string().optional(),
   message: z.string().min(1, "Message is required"),
 });
 

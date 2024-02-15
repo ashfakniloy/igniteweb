@@ -70,7 +70,7 @@ function Footer() {
               target="_blank"
               className="underline text-royal-blue"
             >
-              Ashfak Ahmed Niloy
+              Niloy
             </Link>
           </p>
           <ul className="order-first lg:order-none flex flex-wrap gap-x-8 gap-y-4 justify-center lg:justify-start lg:gap-8 ">

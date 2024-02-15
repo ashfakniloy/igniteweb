@@ -19,6 +19,10 @@ export const navLinks = [
     name: "Pricing",
     link: "/pricing",
   },
+  {
+    name: "Blog",
+    link: "/blog",
+  },
 ];
 
 export const navButtons = [

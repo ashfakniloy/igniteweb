@@ -1,5 +1,5 @@
 import { useFormStatus } from "react-dom";
-import Spinner from "@/components/Icons/Spinner";
+import { Spinner } from "@/components/Spinner";
 
 function SubmitContactButton() {
   const { pending } = useFormStatus();

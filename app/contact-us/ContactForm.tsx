@@ -6,13 +6,15 @@ import { toast } from "sonner";
 import InputField from "@/components/Form/InputField";
 import TextAreaField from "@/components/Form/TextAreaField";
 import { Button } from "@/components/Button";
-import Spinner from "@/components/Icons/Spinner";
+import { Spinner } from "@/components/Spinner";
 import { ContactProps, contactSchema } from "@/schemas/contactSchema";
+import { API_URL } from "@/config";
 
 function ContactForm() {
   const defaultValues = {
     name: "",
     email: "",
+    phoneNumber: "",
     subject: "",
     message: "",
   };
@@ -25,13 +27,32 @@ function ContactForm() {
   const {
     reset,
     handleSubmit,
-    formState: { isLoading },
+    formState: { isSubmitting },
   } = form;
 
-  const contactSubmit = (values: ContactProps) => {
-    console.log("values", values);
-    reset();
-    toast.success("Contact submitted successfully");
+  const contactSubmit = async (values: ContactProps) => {
+    // console.log("values", values);
+
+    const url = `${API_URL}/messages`;
+
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+
+    const data = await res.json();
+
+    console.log("data", data);
+
+    if (res.ok) {
+      toast.success("Contact submitted successfully");
+      reset();
+    } else {
+      toast.error("Something went wrong");
+    }
   };
 
   return (
@@ -47,7 +68,6 @@ function ContactForm() {
             label="Name"
             placeholder="Enter your name"
             type="text"
-            // required
             className="py-4 border-gray-400 focus:border-gray-700 placeholder-gray-500"
           />
           <InputField
@@ -55,23 +75,28 @@ function ContactForm() {
             name="email"
             placeholder="Enter your email"
             type="email"
-            // required
+            className="py-4 border-gray-400 focus:border-gray-700 placeholder-gray-500"
+          />
+          <InputField
+            label="Phone Number"
+            name="phoneNumber"
+            placeholder="Enter your phone number"
+            type="tel"
+            className="py-4 border-gray-400 focus:border-gray-700 placeholder-gray-500"
+          />
+
+          <InputField
+            label="Subject"
+            name="subject"
+            placeholder="Enter subject"
+            type="text"
             className="py-4 border-gray-400 focus:border-gray-700 placeholder-gray-500"
           />
         </div>
-        <InputField
-          label="Subject"
-          name="subject"
-          placeholder="Enter subject"
-          type="text"
-          // required
-          className="py-4 border-gray-400 focus:border-gray-700 placeholder-gray-500"
-        />
         <TextAreaField
           label="Message"
           name="message"
           placeholder="Write your question here"
-          // required
           className="py-4 border-gray-400 focus:border-gray-700 placeholder-gray-500"
         />
 
@@ -79,9 +104,9 @@ function ContactForm() {
           type="submit"
           aria-label="send message"
           className="relative rounded-full w-[240px] px-8 bg-dark-blue text-custom-gray font-medium p-4 text-base lg:text-lg active:scale-95 transition-transform duration-200"
-          disabled={isLoading}
+          disabled={isSubmitting}
         >
-          {isLoading && (
+          {isSubmitting && (
             <span className="absolute flex items-center inset-y-0 left-[8%]">
               <Spinner className="border-custom-gray border-r-custom-gray/30 border-b-custom-gray/30" />
             </span>

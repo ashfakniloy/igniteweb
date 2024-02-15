@@ -1,18 +1,22 @@
 import { MetadataRoute } from "next";
 import { BASE_URL } from "@/config";
+import { getBlogs } from "@/utils/getBlogs";
 import { projectsData } from "@/data/projectsData";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = [
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const blogs = await getBlogs();
+
+  const staticPaths = [
     "",
     "about-us",
     "features",
     "our-work",
     "pricing",
+    "blog",
     "contact-us",
   ];
 
-  const staticPages = paths.map((path) => ({
+  const staticPages = staticPaths.map((path) => ({
     url: `${BASE_URL}/${path}`,
     lastModified: new Date().toISOString(),
   }));
@@ -22,5 +26,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date().toISOString(),
   }));
 
-  return [...staticPages, ...projectPages];
+  const blogPages = blogs
+    ? blogs.map((blog) => ({
+        // url: `${BASE_URL}/blog/${encodeURIComponent(blog.slug)}`,
+        url: `${BASE_URL}/blog/${blog.slug}`,
+        lastModified: blog.updatedAt,
+      }))
+    : [];
+
+  return [...staticPages, ...projectPages, ...blogPages];
 }

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import Script from "next/script";
 import { Toaster } from "sonner";
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
 import { MotionWrapper } from "@/components/Animations";
-import { BASE_URL } from "@/config";
+import { API_ORIGIN, BASE_URL } from "@/config";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -42,6 +43,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          href={`${API_ORIGIN}/_next/static/css/f4b2ee2f39e6b871.css`} // if api is in production
+          // href={`${API_ORIGIN}/_next/static/css/488ef1a06c0ef557.css`} // if api is in npm start
+          // href={`${API_ORIGIN}/styles/blog.css`} // if api is in development
+        />
+      </head>
+
       <body
         className={`text-dark-blue text-sm lg:text-base ${poppins.className}`}
       >
@@ -54,6 +64,16 @@ export default function RootLayout({
 
           <Toaster />
         </MotionWrapper>
+
+        {/* <Script
+          src={`${API_ORIGIN}/api/65c8877f09417cb3d8b7e600/set-device-id`}
+        /> */}
+
+        {/* for non nextjs websites */}
+        <script
+          src={`${API_ORIGIN}/api/65c8877f09417cb3d8b7e600/set-device-id`}
+          async
+        />
       </body>
     </html>
   );
