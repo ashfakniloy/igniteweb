@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+// import { Metadata } from "next";
 import Image from "next/image";
 import { Section } from "@/components/Wrapper/Section";
 import { getFomrattedDate } from "@/utils/getFomrattedDate";
