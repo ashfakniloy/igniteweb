@@ -1,16 +1,16 @@
 import { API_URL } from "@/config";
-// import { headers } from "next/headers";
+import { headers } from "next/headers";
 
 export async function getSingleBlog({
   slug,
 }: {
   slug: string;
 }): Promise<BlogProps | null> {
-  // const headerList = headers();
+  const headerList = headers();
 
   const res = await fetch(`${API_URL}/blogs/${slug}`, {
     cache: "no-store",
-    // headers: headerList, // error after deploying to vercel
+    headers: headerList, // error after deploying to vercel
   });
 
   const data = await res.json();

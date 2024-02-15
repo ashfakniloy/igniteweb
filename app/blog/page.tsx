@@ -19,7 +19,7 @@ async function BlogPage() {
       <AnimateTop>
         <div className="relative">
           <Heading1 className="text-center">Our Blogs</Heading1>
-          <div className="absolute right-0 top-0">
+          <div className="absolute -top-11 flex justify-center w-full lg:block lg:w-auto lg:right-0 lg:top-0">
             <BadgeContentBoard />
           </div>
         </div>

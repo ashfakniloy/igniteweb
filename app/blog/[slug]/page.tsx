@@ -77,7 +77,7 @@ async function SingleBlogPage({ params: { slug } }: SingleBlogPageProps) {
         <AnimateTop>
           <div className="w-full lg:w-[950px] mx-auto">
             <div className="relative">
-              <div className="absolute right-0 -top-12">
+              <div className="absolute flex justify-center w-full lg:block lg:w-auto lg:right-0 -top-12">
                 <BadgeContentBoard />
               </div>
             </div>
