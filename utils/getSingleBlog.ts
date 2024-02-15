@@ -8,9 +8,11 @@ export async function getSingleBlog({
 }): Promise<BlogProps | null> {
   const headerList = headers();
 
+  // headerList.set("x-hello-fetch", "hello");
+
   const res = await fetch(`${API_URL}/blogs/${slug}`, {
     cache: "no-store",
-    headers: headerList, // error after deploying to vercel
+    headers: headers(), // error after deploying to vercel
   });
 
   const data = await res.json();
