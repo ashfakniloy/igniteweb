@@ -46,7 +46,7 @@ export default function RootLayout({
       <head>
         <link
           rel="stylesheet"
-          href={`${API_ORIGIN}/_next/static/css/f4b2ee2f39e6b871.css`} // if api is in production
+          href={`${API_ORIGIN}/_next/static/css/488ef1a06c0ef557.css`} // if api is in production
           // href={`${API_ORIGIN}/_next/static/css/488ef1a06c0ef557.css`} // if api is in npm start
           // href={`${API_ORIGIN}/styles/blog.css`} // if api is in development
         />
