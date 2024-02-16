@@ -25,8 +25,14 @@ function Blogs({ blogs }: { blogs: BlogListProps }) {
           </p>
 
           <p className="mt-2 lg:mt-4 text-xl lg:text-2xl font-medium">
-            {blog.title}
+            <Link
+              href={`/blog/${blog.slug}`}
+              className="hover:text-blue-500 transition-colors duration-200"
+            >
+              {blog.title}
+            </Link>
           </p>
+
           <p className="mt-2 lg:mt-4 text-sm">{blog.metaDescription}</p>
 
           <ArrowLink href={`/blog/${blog.slug}`} className="mt-2 lg:mt-5">

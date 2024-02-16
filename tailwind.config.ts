@@ -30,6 +30,7 @@ const config: Config = {
       },
       animation: {
         "bounce-right": "bounce-right 1s infinite",
+        background: "background 4s ease infinite",
       },
       keyframes: {
         "bounce-right": {
@@ -41,6 +42,10 @@ const config: Config = {
             transform: "translatex(0)",
             animationTimingFunction: "cubic-bezier(0, 0, 0.2, 1)",
           },
+        },
+        background: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
         },
       },
     },

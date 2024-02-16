@@ -7,14 +7,13 @@ export async function getSingleBlog({
   slug: string;
 }): Promise<BlogProps | null> {
   const headerList = headers();
-  const userAgent = headerList.get("user-agent");
-  const xForwardedFor = headerList.get("x-forwarded-for");
-  const headersInfo = {
-    "user-agent": `${userAgent}`,
-    "x-forwarded-for": `${xForwardedFor}`,
-  };
 
-  // console.log("headersInfo", headersInfo);
+  const userAgent = headerList.get("User-Agent");
+  const xForwardedFor = headerList.get("X-Forwarded-For");
+  const headersInfo = {
+    "User-Agent": userAgent || "",
+    "X-Forwarded-For": xForwardedFor || "",
+  };
 
   const res = await fetch(`${API_URL}/blogs/${slug}`, {
     cache: "no-store",
