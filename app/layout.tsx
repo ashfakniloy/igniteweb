@@ -46,7 +46,7 @@ export default function RootLayout({
       <head>
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/ashfakniloy/contentboard/public/styles/blog.css"
+          href="https://cdn.jsdelivr.net/gh/ashfakniloy/contentboard/public/styles/blog.min.css"
         />
       </head>
 
