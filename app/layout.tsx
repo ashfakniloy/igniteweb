@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import Script from "next/script";
 import { Toaster } from "sonner";
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
@@ -46,8 +45,7 @@ export default function RootLayout({
       <head>
         <link
           rel="stylesheet"
-          href={`${API_ORIGIN}/_next/static/css/488ef1a06c0ef557.css`} // if api is in production
-          // href={`${API_ORIGIN}/_next/static/css/488ef1a06c0ef557.css`} // if api is in npm start
+          href={`${API_ORIGIN}/_next/static/css/a68039a93d772821.css`} // if api is in production
           // href={`${API_ORIGIN}/styles/blog.css`} // if api is in development
         />
       </head>
@@ -64,16 +62,6 @@ export default function RootLayout({
 
           <Toaster />
         </MotionWrapper>
-
-        {/* <Script
-          src={`${API_ORIGIN}/api/65c8877f09417cb3d8b7e600/set-device-id`}
-        /> */}
-
-        {/* for non nextjs websites */}
-        {/* <script
-          src={`${API_ORIGIN}/api/65c8877f09417cb3d8b7e600/set-device-id`}
-          async
-        /> */}
       </body>
     </html>
   );

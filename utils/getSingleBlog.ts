@@ -10,6 +10,7 @@ export async function getSingleBlog({
 
   const userAgent = headerList.get("User-Agent");
   const xForwardedFor = headerList.get("X-Forwarded-For");
+
   const headersInfo = {
     "User-Agent": userAgent || "",
     "X-Forwarded-For": xForwardedFor || "",
