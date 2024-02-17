@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "sonner";
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
@@ -62,6 +63,8 @@ export default function RootLayout({
 
           <Toaster />
         </MotionWrapper>
+
+        <Analytics />
       </body>
     </html>
   );
