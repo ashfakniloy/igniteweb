@@ -5,7 +5,7 @@ import { Toaster } from "sonner";
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
 import { MotionWrapper } from "@/components/Animations";
-import { API_ORIGIN, BASE_URL } from "@/config";
+import { BASE_URL } from "@/config";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -46,8 +46,7 @@ export default function RootLayout({
       <head>
         <link
           rel="stylesheet"
-          href={`${API_ORIGIN}/_next/static/css/a68039a93d772821.css`} // if api is in production
-          // href={`${API_ORIGIN}/styles/blog.css`} // if api is in development
+          href="https://cdn.jsdelivr.net/gh/ashfakniloy/contentboard/public/styles/blog.css"
         />
       </head>
 
