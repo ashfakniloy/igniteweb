@@ -1,12 +1,12 @@
 // import { Metadata } from "next";
-import Image from "next/image";
-import { Section } from "@/components/Wrapper/Section";
-import { getFomrattedDate } from "@/utils/getFomrattedDate";
-import { getSingleBlog } from "@/utils/getSingleBlog";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import parser from "html-react-parser";
+import { Section } from "@/components/Wrapper/Section";
 import { AnimateTop } from "@/components/Animations";
 import BadgeContentBoard from "@/components/BadgeContentBoard";
+import { getSingleBlog } from "@/utils/getSingleBlog";
+import { getFomrattedDate } from "@/utils/getFomrattedDate";
 
 type SingleBlogPageProps = {
   params: {
@@ -119,7 +119,7 @@ async function SingleBlogPage({ params: { slug } }: SingleBlogPageProps) {
                 />
               </div>
 
-              <div className="mt-14 ContentBoard">{parser(blog.body)}</div>
+              <div className="mt-14">{parser(blog.body)}</div>
             </article>
           </div>
         </AnimateTop>
