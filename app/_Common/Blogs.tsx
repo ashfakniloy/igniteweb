@@ -33,7 +33,9 @@ function Blogs({ blogs }: { blogs: BlogListProps }) {
             </Link>
           </p>
 
-          <p className="mt-2 lg:mt-4 text-sm">{blog.metaDescription}</p>
+          <p className="mt-2 lg:mt-4 text-sm line-clamp-2">
+            {blog.metaDescription}
+          </p>
 
           <ArrowLink href={`/blog/${blog.slug}`} className="mt-2 lg:mt-5">
             Read More
